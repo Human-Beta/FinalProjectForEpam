@@ -1,0 +1,22 @@
+<%@ page pageEncoding="UTF-8"%>
+<%@ include file="/WEB-INF/jspf/directive/page.jspf"%>
+<%@ include file="/WEB-INF/jspf/directive/taglib.jspf"%>
+
+<%@ page import="ua.nure.shishov.finaltask.db.UserRole"%>
+
+<div id="sidebar">
+	<a href="controller?command=flightList" class="sidebar-a ${param.command == 'flightList'? 'sidebar-active-a':''}"><fmt:message key="sidebar_jsp.link.flight_list_command" /></a>
+	<c:if test="${sessionScope.userRole eq UserRole.DRIVER}">
+		<a href="controller?command=userFlightList" class="sidebar-a ${param.command == 'userFlightList'? 'sidebar-active-a':''}"><fmt:message key="sidebar_jsp.link.user_flight_list_command" /></a>
+		<a href="controller?command=userRequestList" class="sidebar-a ${param.command == 'userRequestList'? 'sidebar-active-a':''}"><fmt:message key="sidebar_jsp.link.user_request_list_command" /></a>
+	</c:if>
+	<c:if
+		test="${sessionScope.userRole eq UserRole.DISPATCHER || sessionScope.userRole eq UserRole.ADMIN}">
+		<a href="controller?command=allRequestList" class="sidebar-a ${param.command == 'allRequestList'? 'sidebar-active-a':''}"><fmt:message key="sidebar_jsp.link.all_request_list_command" /></a>
+		<a href="controller?command=carList" class="sidebar-a ${param.command == 'carList'? 'sidebar-active-a':''}"><fmt:message key="sidebar_jsp.link.car_list_command" /></a>
+	</c:if>
+	<c:if
+		test="${sessionScope.userRole eq UserRole.ADMIN}">
+		<a href="controller?command=userList" class="sidebar-a ${param.command == 'userList'? 'sidebar-active-a':''}"><fmt:message key="sidebar_jsp.link.user_list_command" /></a>
+	</c:if>
+</div>

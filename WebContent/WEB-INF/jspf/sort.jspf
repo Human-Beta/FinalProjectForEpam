@@ -1,0 +1,20 @@
+<%@ page pageEncoding="UTF-8"%>
+<%@ include file="/WEB-INF/jspf/directive/page.jspf"%>
+<%@ include file="/WEB-INF/jspf/directive/taglib.jspf"%>
+
+<div class="layout">
+	
+	<form action="controller" method="get">
+		<input type="hidden" name="command" value="${param.command}">
+		<span class="sort-css">
+				<select class="select" name="sort" onchange="this.form.submit()">	
+					<c:if test="${not empty requestScope.sorts}">
+						<c:forEach var="i" begin="0" end="${fn:length(requestScope.sorts) - 1}" step="1">
+							<c:set var="sort" value="${requestScope.sorts[i]}"></c:set>
+							<option value="${sort}" ${requestScope.selectedSort eq sort ? 'selected' : ''}>${sort}</option>
+						</c:forEach>
+					</c:if>
+				</select>
+		</span>
+	</form>
+</div>

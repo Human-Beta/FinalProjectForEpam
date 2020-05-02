@@ -1,0 +1,339 @@
+body, form {
+	margin: 0px;
+}
+
+body p {
+	text-align: center;
+	color: white;
+}
+
+table {
+	border: 1px solid black;
+	border-collapse: collapse;
+	min-width: 800px;
+}
+
+td, th {
+	padding: 10px 10px;
+	text-align: left;
+}
+
+tr {
+	border-top:  1px solid #4493be;
+	border-bottom:  1px solid #4493be;
+}
+
+tr:nth-child(even) {
+	background-color: #61c8ff;	
+}
+
+a {
+	color: #3700ff;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+.group:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+#wrapper {
+	
+}
+
+.back-color {
+	width: 100%;
+	height: 100vh;
+	position: fixed;
+	background-color: #f2f2f2;
+	z-index: -999;
+}
+
+#header {
+	width: 100%;
+	height: 45px;
+	background-color: #4493be;
+	/*position: fixed;
+	z-index: 2;*/
+}
+
+#header a {
+	color: white;
+}
+
+#leftHeader {
+	float: left;
+	margin-left: 15px;
+}
+
+#rightHeader {
+	float: right;
+	margin-right: 15px;
+}
+
+#link-logout {
+	margin: 10px;
+}
+
+#form-locales {
+	display: inline;
+}
+
+#leftHeader, #rightHeader {
+	margin-top: 12.5px;
+}
+
+#sidebar {
+	width: 150px;
+	padding: 8px 0;
+	float: left;
+}
+
+.sidebar-a {
+	padding: 6px 8px 6px 16px;
+	text-decoration: none;
+	font-size: 18px;
+	color: #2196F3;
+	display: block;
+}
+
+.sidebar-active-a {
+	background-color: #4493be;
+	color: white;
+}
+
+.sidebar-a:hover {
+	color: black;
+}
+
+#content {
+	margin: 0 auto;
+	min-height: calc(100% - 110px);
+	width: 900px;
+	background-color: white;
+	padding: 10px;
+}
+
+.button-add {
+	margin: 10px 0;
+}
+
+/* for tables */
+
+/* common */
+
+.column-num {
+	width: 40px;
+}
+
+.column-word {
+	width: 130px;
+}
+
+.column-date {
+	width: 150px;	
+}
+
+.column-button {
+	text-align: right;
+}
+
+.sort-css {
+	position: relative;
+	display: inline-block;
+	vertical-align: middle;
+	margin: 10px 0;
+	width: 100px;
+}
+
+.select {
+	cursor: pointer;
+	background-color: #fff;
+	font-size: 14px;
+	color: black;
+	padding: 7px;
+	padding-right: 17px;
+	border: 1px solid #d2d2d2;
+	margin: 0;
+	border-radius: 4px;
+	text-indent: 0.01px;
+	-webkit-appearance: button;
+}
+
+.select:hover {
+	border-color: #a6a5a5;
+}
+
+.select:focus {
+	border-color: #a6a5a5;
+	color: #222;
+	outline: 0;
+}
+
+.select[disabled] {
+	color: rgba(0, 0, 0, .3);
+}
+
+/* overlay */
+.overlay {
+	position: fixed;
+	display: none;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 100;
+}
+
+.overlay .overlay-background {
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+	cursor: pointer;
+}
+
+#footer {
+	height: 45px;
+	background-color: #4493be;
+	z-index: 9999;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+/* LOGIN */
+
+#login-back-color {
+	background-color: #61c8ff;
+}
+
+#login {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	box-shadow: 0 0 10px;
+	background-color: #ffffff;
+	width: 400px;
+	height: 300px;
+}
+
+#form-login {
+	display: flex;
+    height: 100%;
+    align-items: center;
+}
+
+/*#login input {
+	margin: 10px 0px;
+	padding: 2px 0px;
+	border: 0.5px solid black;
+}*/
+
+#login-inputs {
+	margin: 0 auto;
+	width: 75%;
+	height: 80%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.input-login {
+	width: 100%;
+	height: 20%;
+	margin: 10px 0;
+	border: none;
+}
+
+.input-login-text {
+	background-color: #f2f2f2;
+	padding: 0 30px;
+}
+
+#input-login-submit {
+	padding: 10px, 0;
+	background-color: #0dabff;
+	color: white;
+}
+
+#input-login-submit:hover {
+	cursor: pointer;
+}
+
+/* FLIGHT LIST */
+
+.window {
+	min-width: 300px;
+	min-height: 200px;
+	background-color: white;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	border: 1px solid black;
+	padding: 30px 40px;
+}
+
+#window-overlay-car-list {
+	width: 550px;
+	height: 322px;
+}
+
+#make-flight {
+	height: 150px;
+}
+
+#make-flight .prop {
+	margin: 30px 0px;
+}
+
+.prop {
+	display: flex;
+	justify-content: space-between;
+	margin: 10 0px;
+}
+
+/* REQUEST LIST */
+#car-list {
+	width: 500px;
+	min-height: 200px;
+	padding: 10px;
+	background-color: white;
+	display: none;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	border: 1px solid black;
+}
+
+#overlay-car-list .alias {
+	font-weight: 600;
+}
+
+.small-input {
+	width: 30px;
+	border: 0.1px solid black;
+}
+
+#overlay-car-list-table {
+	overflow-y: scroll;
+	max-height: 200px;
+}
+
+.layout {
+	display: flex;
+	width: 100%;
+	max-width: 1600px;
+	margin: 0 auto;
+	justify-content: flex-end;
+}

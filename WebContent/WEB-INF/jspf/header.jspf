@@ -1,0 +1,32 @@
+<%--=========================================================================== 
+Header (top area). 
+===========================================================================--%>
+
+<%@ page pageEncoding="UTF-8"%>
+<%@ include file="/WEB-INF/jspf/directive/page.jspf"%>
+<%@ include file="/WEB-INF/jspf/directive/taglib.jspf"%>
+
+<%@ page import="ua.nure.shishov.finaltask.db.entity.User"%>
+<div id="header">
+
+	<div id="leftHeader">
+		<span>${sessionScope.loggedUser.login}</span>
+	</div>
+
+	<div id="rightHeader">
+		<form id="form-locales" action="changeLocale.jsp" method="post">
+			<input type="hidden" name="forwardCommand" value="${param.command}">
+			<c:if test="${not empty param.sort}">
+				<input type="hidden" name="sort" value="${param.sort}">
+			</c:if>
+			<select name="locale" onchange="this.form.submit()">
+				<c:forEach var="locale" items="${applicationScope.locales}">
+					<c:set var="selected" value="${locale.key eq sessionScope.currentLocale ? 'selected' : ''}"/>
+					<option value="${locale.key}" ${selected}>${locale.value}</option>
+				</c:forEach>
+			</select>
+		</form>
+		<span id="link-logout"><a href="controller?command=logout"><fmt:message key="header_jsp.link.logout_command" /></a></span>
+	</div>
+
+</div>
